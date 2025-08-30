@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Variable</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <p>
+      <button id="show" type="button">
+        Show Quantity
+      </button>
+      <button id="add" type="button">
+        Add to Cart
+      </button>
+      <button id="plus2" type="button">
+        +2
+      </button>
+      <button id="plus3" type="button">
+        +3
+      </button>
+      <button id="reset" type="button">
+        Reset Cart
+      </button>
+    </p>
+    <script>
+      let quantity = 0;
+      document.getElementById("show").onclick = function () {
+        console.log(quantity);
+      }
+      document.getElementById("add").onclick = function () {
+        updateCartQuantity(1);
+      }
+      document.getElementById("plus2").onclick = function () {
+        updateCartQuantity(2);
+      }
+      document.getElementById("plus3").onclick = function () {
+        updateCartQuantity(3);
+      }
+      document.getElementById("reset").onclick = function () {
+        quantity = 0;
+        console.log(quantity);
+      }
+
+      function updateCartQuantity(addAmount) {
+        if (quantity +addAmount > 10) {
+          console.log("Cart full");
+          return
+        } else {
+          quantity += addAmount;
+        }
+        console.log(quantity);
+      }
+    </script>
+  </body>
+</html>
