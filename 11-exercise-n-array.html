@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+      /*countWords(words) {
+        let array = {};
+        for (let i=0; i<words.length; i++){
+          for (let j=0; j<array.length; j++) {
+            if (words[i] === array[j]) {
+              array[j] += 1;
+            }else {
+              let array[] = 1;
+            }
+          }
+        }
+      }*/
+        const array = ["hafiz", "sudais", "hafiz", "sudais", "davin"];
+        countWords(array);
+
+        function countWords(words) {
+          let object = {};
+
+          for (let i=0; i<words.length; i++) {
+            let word = words[i];
+            if (object[word]) {
+              object[word] += 1;
+            }else {
+              object[word] = 1;
+            }
+          }
+          console.log(object);
+        }
+    </script>
+  </body>
+</html>
+
+
+
