@@ -71,11 +71,35 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary button-js" data-product-id="${product.id}" data-product-name="${product.name}">
             Add to Cart
           </button>
         </div>`
 });
 
 document.querySelector('.amazon-js').innerHTML = html;
+
+document.querySelectorAll('.button-js').forEach((button) => {
+  button.addEventListener("click", () => {
+    
+    let sameProduct;
+
+    cart.forEach((productCart) => {
+      if (button.dataset.productId === productCart.id) {
+        sameProduct = productCart
+      }
+    })
+
+    if (sameProduct) {
+      sameProduct.quantity += 1
+    }else {
+        cart.push({
+          id: button.dataset.productId,
+          name: button.dataset.productName,
+          quantity: 1
+        })
+      }
+    console.log(cart);
+  })
+})
 
