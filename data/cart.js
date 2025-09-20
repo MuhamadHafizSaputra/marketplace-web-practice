@@ -25,3 +25,15 @@ export function addToCart (button) {
         })
       }
 }
+
+export function removeFromCart (productId) {
+  let newCart = [];
+
+  cart.forEach((item) => {
+    if (!(item.id === productId)) {
+      newCart.push(item);
+    }
+  })
+
+  cart = newCart;
+}
